@@ -1,0 +1,60 @@
+:root {
+  --bg: #0a0a0c;
+  --surface: #12121a;
+  --surface-hover: #1a1a24;
+  --border: rgba(255, 212, 100, 0.15);
+  --accent: #ffd464;
+  --accent-dim: #c9a84a;
+  --text: #f4f2ed;
+  --text-muted: #8a8680;
+  --success: #6ee7b7;
+  --error: #f87171;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Subtle grid background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 212, 100, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 212, 100, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+input {
+  font-family: inherit;
+}
