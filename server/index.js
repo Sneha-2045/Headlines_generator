@@ -1,3 +1,8 @@
+try {
+  require('dotenv').config();
+} catch {
+  // dotenv optional; env vars can come from shell/host
+}
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
