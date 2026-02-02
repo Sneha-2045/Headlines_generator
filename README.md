@@ -31,6 +31,16 @@ npm run dev
 | `npm run build`  | Build React for production |
 | `npm run start`  | Run server (after build)   |
 
+## Deploy on Vercel
+
+1. Push the repo to GitHub (or connect another Git provider).
+2. In [Vercel](https://vercel.com): **Add New Project** → import the repo.
+3. Leave **Build Command** and **Output Directory** as default (or use `npm run build` and `dist`). Vercel will use `vercel.json` if present.
+4. **Environment variables** (optional): add `VITE_API_URL` only if your API is on another domain. For a single Vercel deployment, leave it unset so the app uses `/api`.
+5. Deploy. The React app is built from `dist`, and `/api/generate-headlines` is handled by the serverless function in `api/generate-headlines.js`.
+
+No `PORT` or Node server is used on Vercel; the API runs as a serverless function.
+
 ## API
 
 **POST** `/api/generate-headlines`
